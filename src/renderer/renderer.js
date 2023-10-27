@@ -1,8 +1,8 @@
 let mainVideo  = document.getElementById("mainVideo");
 
 function playPauseMainVideo() { 
-    if (myVideo.paused) 
-      myVideo.play(); 
+    if (mainVideo.paused) 
+      mainVideo.play(); 
     else 
-      myVideo.pause(); 
+      mainVideo.pause(); 
   } 
