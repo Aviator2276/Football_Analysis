@@ -7,52 +7,61 @@ body {
 .videoPlayer {
   height: calc(min(100vw / 16 , 100vh / 9) * 9 * .85);
   width: calc(min(100vw / 16 , 100vh / 9) * 16 * .85);
-  margin: 0;
-  padding: 0;
+  position: absolute;
   aspect-ratio: 16/9;
 }
 video {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  position: absolute;
   aspect-ratio: 16/9;
 }
 .mediaControls {
   z-index: 2;
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
-  
 }
 .playPauseMediaControl {
   z-index: 2;
   position: absolute;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" /></svg>') no-repeat top calc(min(100vw / 16 , 100vh / 9) * 9 * .85 * .5) left calc(min(100vw / 16 , 100vh / 9) * 16 * .85 * .5);
-  background-size: calc(min(100vw / 16 , 100vh / 9) * 9 * .85 * .1);
+  background: none;
+  height: 100%;
+  width: 100%;
   border: 0;
   padding: 0;
-  margin-top: -5vh;
-  margin-left: -5vh;
-  height: 10vh;
-  width: 10vw;
-  height: calc(min(100vw / 16 , 100vh / 9) * 9 * .90);
-  width: calc(min(100vw / 16 , 100vh / 9) * 16 * .90);
-  transition: .3s;
+  margin: 0;
 }
 .playPauseBackground {
-  z-index: 1;
-  background-color: grey;
+  z-index: 3;
+  color: black;
   border: 0;
   padding: 0;
-  height: 10vh;
-  width: 10vw;
+  height: 30vh;
+  width: 30vw;
   border-radius: 50%;
 }
-.playPauseMediaControl:hover {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" /></svg>') no-repeat top calc(min(100vw / 16 , 100vh / 9) * 9 * .85 * .5) left calc(min(100vw / 16 , 100vh / 9) * 16 * .85 * .5);
-  background-size: calc(min(100vw / 16 , 100vh / 9) * 9 * .85 * .15);
-  margin-top: -7.5vh;
-  margin-left: -7.5vh;
-  transition: .3s;
+.playPauseMediaControl:hover #play{
+  height: 20%;
+  transition: .2s;
+}
+#play {
+  height: 15%;
+  transition: .2s;
+}
+@keyframes playDisappear {
+  0% {
+    stroke: white;
+  }
+  100% {
+    stroke: rgba(0, 0, 0, 0)
+  }
+}
+@keyframes playAppear {
+  0% {
+    stroke: rgba(0, 0, 0, 0)
+  }
+  100% {
+    stroke: white;
+  }
 }
