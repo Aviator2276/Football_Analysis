@@ -4,13 +4,16 @@ body {
     margin: 0;
     padding: 0;
 }
+.hidden {
+  display: none;
+}
 .videoPlayer {
   height: calc(min(100vw / 16 , 100vh / 9) * 9 * .85);
   width: calc(min(100vw / 16 , 100vh / 9) * 16 * .85);
   position: absolute;
   aspect-ratio: 16/9;
 }
-video {
+#mainVideo {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -22,46 +25,44 @@ video {
   height: 100%;
   width: 100%;
 }
-.playPauseMediaControl {
+.playPauseButton {
   z-index: 2;
-  position: absolute;
-  background: none;
+  background-color: rgba(0, 0, 0, 0);
   height: 100%;
   width: 100%;
   border: 0;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.playPauseBackground {
-  z-index: 3;
-  color: black;
-  border: 0;
-  padding: 0;
-  height: 30vh;
-  width: 30vw;
+.playPauseIcon {
+  background-color: rgba(0, 0, 0, 0.80);
+  background-position: center center;
   border-radius: 50%;
-}
-.playPauseMediaControl:hover #play{
-  height: 20%;
+  height: 13vh;
+  padding: 1%;
+  aspect-ratio: 1/1;
   transition: .2s;
 }
-#play {
-  height: 15%;
+.playPauseIcon:hover {
+  height: 18vh;
+  aspect-ratio: 1/1;
   transition: .2s;
 }
-@keyframes playDisappear {
+@keyframes onPlayPauseAnim {
   0% {
-    stroke: white;
+    opacity: 1;
+    height: 13vh;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.8;
+    height: 10vh;
   }
   100% {
-    stroke: rgba(0, 0, 0, 0)
-  }
-}
-@keyframes playAppear {
-  0% {
-    stroke: rgba(0, 0, 0, 0)
-  }
-  100% {
-    stroke: white;
+    opacity: 0;
+    height: 13vh;
   }
 }

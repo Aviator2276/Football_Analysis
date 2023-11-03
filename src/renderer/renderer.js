@@ -1,13 +1,22 @@
-let mainVideo  = document.getElementById("mainVideo");
-const play = document.getElementById('play')
+const mainVideo  = document.getElementById("mainVideo");
+const playPauseControl = document.getElementById("playPauseControl");
+const playIcon = document.getElementById("play");
+const pauseIcon = document.getElementById("pause");
 
-function playPauseMainVideo() {
+playPauseControl.onclick = () => {
   if (mainVideo.paused) {
     mainVideo.play();
-    play.style.animation = "playDisappear .5s forwards";
+    pauseIcon.style.animation = "onPlayPauseAnim .6s forwards";
+    playIcon.style.animation = "onPlayPauseAnim .6s  reverse";
+    playIcon.classList.add('hidden');
+    pauseIcon.classList.remove('hidden');
+    
   } else {
     mainVideo.pause();
-    play.style.animation = "playAppear .5s forwards";
+    playIcon.style.animation = "onPlayPauseAnim .6s forwards";
+    pauseIcon.style.animation = "onPlayPauseAnim .6s  reverse";
+    pauseIcon.classList.add('hidden');
+    playIcon.classList.remove('hidden');
   }
 }
 //mainVideo.addEventListener("ended", play.style.animation = "playAppear .5s forwards", false);
