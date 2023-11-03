@@ -10,7 +10,6 @@ playPauseControl.onclick = () => {
     playIcon.style.animation = "onPlayPauseAnim .6s  reverse";
     playIcon.classList.add('hidden');
     pauseIcon.classList.remove('hidden');
-    
   } else {
     mainVideo.pause();
     playIcon.style.animation = "onPlayPauseAnim .6s forwards";

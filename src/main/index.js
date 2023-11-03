@@ -12,7 +12,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
-    autoHideMenuBar: false,
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
@@ -25,6 +25,7 @@ const createWindow = () => {
   if (isDev) {
     //mainWindow.webContents.openDevTools();
   }
+  mainWindow.on("ready-to-show", mainWindow.show)
   //mainWindow.setFullScreen(true)
 };
 

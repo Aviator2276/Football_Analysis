@@ -1,3 +1,21 @@
+::placeholder {
+  text-align: center; 
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #151515;
+}
+::-webkit-scrollbar-thumb {
+  background: #303030;
+  border-radius: 2.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
     overflow: hidden;
@@ -8,8 +26,9 @@ body {
   display: none;
 }
 .videoPlayer {
-  height: calc(min(100vw / 16 , 100vh / 9) * 9 * .85);
-  width: calc(min(100vw / 16 , 100vh / 9) * 16 * .85);
+  height: 80vh;
+  width: 80vw;
+  background: black;
   position: absolute;
   aspect-ratio: 16/9;
 }
@@ -22,7 +41,7 @@ body {
 .mediaControls {
   z-index: 2;
   position: absolute;
-  height: 100%;
+  height: 92%;
   width: 100%;
 }
 .playPauseButton {
@@ -45,7 +64,7 @@ body {
   transition: .2s;
 }
 .playPauseIcon:hover {
-  height: 18vh;
+  height: 15vh;
   aspect-ratio: 1/1;
   transition: .2s;
 }
@@ -65,4 +84,67 @@ body {
     opacity: 0;
     height: 13vh;
   }
+}
+.playlistButtons {
+  background: rgb(54,54,54);
+  background: linear-gradient(180deg, rgba(54,54,54,1) 0%, rgba(40,40,40,1) 50%, rgba(15,15,15,1) 100%);
+  position: absolute;
+  height: 100vh;
+  width: 20vw;
+  aspect-ratio: 16/9;
+  right: 0;
+  padding: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-top: 1%;
+}
+.playlistSelect {
+  margin: 5% 3% 3% 3%;
+  height: 5vh;
+  border: 0;
+  border-radius: calc(100vh * 0.01);
+  aspect-ratio: 16 / 9;
+  background-color: #8f8f8f;
+  box-shadow: 0 calc(100vh * 0.005) #474747;
+  font-size: 2vw;
+  color: white;
+  transition: .2s;
+}
+.playlistSelect:hover {
+  transform: translateY(calc(100vh * -0.005));
+  box-shadow: 0 calc(100vh * 0.010) #474747;
+  transition: .2s;
+}
+.playlistSelect:active {
+  transform: translateY(calc(100vh * 0.003));
+  box-shadow: 0 calc(100vh * 0.002) #474747;
+  transition: .2s;
+}
+.videoPlaylist {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(3,3,64,1) 35%, rgba(0,0,0,1) 100%);
+  position: absolute;
+  height: 20vh;
+  width: 80vw;
+  aspect-ratio: 16/9;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto;
+}
+.videoThumbnail {
+  margin: 1%;
+  padding: 1vh;
+  border: 0;
+  border-radius: calc(100vh * 0.02);
+  aspect-ratio: 16 / 9;
+  transition: .2s;
+}
+.videoThumbnail:hover {
+  transform: translateY(calc(100vh * -0.005));
+  transition: .2s;
 }
